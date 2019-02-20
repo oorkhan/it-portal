@@ -1,0 +1,7 @@
+add col phone, department id to users table
+add browser validation
+add create equipmenttype button to create and edit views of equipment
+change selects with search selects equipment create
+create pages with deleted equipment
+in equipment show add  red deleted  if is_deleted == true and deleted date
+add files/documents table to equipment upload akt related to it

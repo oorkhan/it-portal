@@ -1,0 +1,82 @@
+Laravel 5.4: Specified key was too long error
+AppServiceProvider.php
+use Illuminate\Support\Facades\Schema;
+
+public function boot()
+{
+    Schema::defaultStringLength(191);
+}
+***************
+autorization
+create policy
+register policy
+use policy in controller $this->authorize('update', $project);
+
+blade authorizaton
+@can('update', $project)
+<a href="">Create project</a>
+@endcan
+
+making user an admin
+in AuthServiceProvider.php do
+use Illuminate\Auth\Access\Gate;
+public function boot(Gate $gate)
+    {
+        $this->registerPolicies();
+
+        $gate->before(function($user){
+           return $user->id == 1;// change to $user->isAdmin()
+        });
+
+    }
+
+to test email in env file change to log driver
+MAIL_DRIVER=log
+
+dont forget second argument owner id. bewcouse laravel expects user_id
+public function projects(){
+        return $this->hasMany(Project::class, 'owner_id');
+    }
+model hooks
+************
+events
+php artisan make:event
+in event file
+    public $project;
+    public function __construct($project)
+    {
+      $this->project = $project;
+    }
+in controller file :  event(new ProjectCreatedEvent($project));
+php artisan make:listener SendNotificationOnProjectCreate --event=ProjectCreatedEvent
+
+in listener file
+     public function handle(ProjectCreatedEvent $event)
+        {
+            Mail::to($event->project->owner->email)->send(new ProjectCreated($event->project));
+
+        }
+in EventServiceProvider
+    protected $listen = [
+            Registered::class => [
+                SendEmailVerificationNotification::class,
+            ],
+            ProjectCreatedEvent::class => [
+               SendNotificationOnProjectCreate::class,
+            ]
+        ];
+
+
+event can be fired in model also. But i din in controller
+
+protected $dispachesEvents = [
+    'created' => ProjectCreatedEvent::class,
+]
+*******************
+more about collections
+filter
+*******
+create helper.php with helper functions
+add reference to composer.json
+composer dump-autoload
+did it with flash messaging
