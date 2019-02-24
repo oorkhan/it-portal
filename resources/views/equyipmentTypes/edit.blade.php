@@ -9,10 +9,11 @@
                     @csrf
                     @method('PATCH')
                     <div class="form-group">
-                        <label for="campusName">Equipment type name</label>
+                        <label for="campusName">{{trans('equipment-types.name')}}</label>
                         <input type="text" class="form-control" id="campusName" name="name" value="{{old('name') ? old('name') : $equipmentType->name}}">
                     </div>
-                    <button type="submit" class="btn btn-warning">Update campus</button>
+                    <button type="submit" class="btn btn-warning">{{trans('form-elements.update-btn')}}</button>
+                    <a class="btn btn-secondary" href="{{$equipmentType->path()}}">{{trans('form-elements.cancel-btn')}}</a>
                 </form>
                 @if($errors->any())
                     @include('partials.errors')

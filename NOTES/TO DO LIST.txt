@@ -5,3 +5,15 @@ change selects with search selects equipment create
 create pages with deleted equipment
 in equipment show add  red deleted  if is_deleted == true and deleted date
 add files/documents table to equipment upload akt related to it
+
+добавить лакализацию messages
+добавить pagination
+add file upload to equipment
+add action to equipment class
+покупка, передача, списание, починка
+
+
+
+*****
+Завершенные:
+добавить поддержку нескольких языков https://kode-blog.io/laravel-5-localization

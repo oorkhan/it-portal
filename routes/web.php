@@ -11,14 +11,23 @@
 |
 */
 
+Route::group([
+    'prefix' => LaravelLocalization::setLocale(),
+    'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
+], function()
+{
+    /** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
+    Route::get('/', 'HomeController@index')->name('home');
+    Route::resource('projects', 'ProjectsController');
+    Route::resource('campuses', 'CampusController');
+    Route::resource('rooms', 'RoomController');
+    Route::resource('equipment-types', 'EquipmentTypeController');
+    Route::resource('equipment', 'EquipmentController');
+    Route::post('/projects/{project}/tasks', 'ProjectTasksController@store');
+    Route::patch('/tasks/{task}', 'ProjectTasksController@update');
+    Auth::routes();
+});
 
-Auth::routes();
+/** OTHER PAGES THAT SHOULD NOT BE LOCALIZED **/
 
-Route::get('/', 'HomeController@index')->name('home');
-Route::resource('projects', 'ProjectsController');
-Route::resource('campuses', 'CampusController');
-Route::resource('rooms', 'RoomController');
-Route::resource('equipment-types', 'EquipmentTypeController');
-Route::resource('equipment', 'EquipmentController');
-Route::post('/projects/{project}/tasks', 'ProjectTasksController@store');
-Route::patch('/tasks/{task}', 'ProjectTasksController@update');
+

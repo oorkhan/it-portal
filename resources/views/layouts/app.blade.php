@@ -23,9 +23,9 @@
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
-            <div class="container">
+            <li class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'IT Portal') }}
+                    {{trans('header.logo')}}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -35,19 +35,19 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="/">{{trans('header.home')}}<span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/equipment">Equipment</a>
+                            <a class="nav-link" href="/equipment">{{trans('header.equipment')}}</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Setup
+                                {{trans('header.setup')}}
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="/campuses">Campuses</a>
-                                <a class="dropdown-item" href="/rooms">Rooms</a>
-                                <a class="dropdown-item" href="/equipment-types">Equipment Types</a>
+                                <a class="dropdown-item" href="/campuses">{{trans('header.campuses')}}</a>
+                                <a class="dropdown-item" href="/rooms">{{trans('header.rooms')}}</a>
+                                <a class="dropdown-item" href="/equipment-types">{{trans('header.equipment-types')}}</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#">Something else here</a>
                             </div>
@@ -60,12 +60,6 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown09" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="flag-icon flag-icon-us"> </span> English</a>
-                            <div class="dropdown-menu" aria-labelledby="dropdown09">
-                                <a class="dropdown-item" href="#ru"><span class="flag-icon flag-icon-ru"> </span>  Russian</a>
-                            </div>
-                        </li>
 
                         <!-- Authentication Links -->
                         @guest
@@ -96,6 +90,11 @@
                                 </div>
                             </li>
                         @endguest
+
+                        @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                            <a class="mx-1 flag-icon flag-icon-{{$localeCode == 'en' ? 'us' : $localeCode}}" rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                            </a>
+                        @endforeach
                     </ul>
                 </div>
             </div>

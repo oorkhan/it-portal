@@ -5,15 +5,17 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <h1>All Campuses</h1>
-                <div class="d-flex justify-content-end mb-2"><a class="btn btn-primary" href="/campuses/create">Add Campus</a></div>
+                <h1>{{trans('campuses.all')}}</h1>
+                <div class="d-flex justify-content-end mb-2">
+                    <a class="btn btn-primary" href="/campuses/create">{{trans('form-elements.add-btn')}}</a>
+                </div>
                 <div>
                     @if(count($campuses)>=1)
                     <table class="table table-striped">
                         <thead>
                         <tr>
-                            <th scope="col">Name</th>
-                            <th scope="col">Address</th>
+                            <th scope="col">{{trans('campuses.name')}}</th>
+                            <th scope="col">{{trans('campuses.address')}}</th>
                         </tr>
                         </thead>
                         <tbody>

@@ -1,0 +1,8 @@
+equipmentfiles tbl
+id
+equipment id
+description
+type(akt pokupki, peredachi, spisania)
+create date
+
+
