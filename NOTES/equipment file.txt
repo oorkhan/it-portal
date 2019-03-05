@@ -1,8 +1,11 @@
 equipmentfiles tbl
 id
+path
+name
+
+equipment transactions tbl
+id
 equipment id
+equipmentfiles id
 description
 type(akt pokupki, peredachi, spisania)
-create date
-
-

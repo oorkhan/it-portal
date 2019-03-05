@@ -38,7 +38,7 @@
                             <a class="nav-link" href="/">{{trans('header.home')}}<span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/equipment">{{trans('header.equipment')}}</a>
+                            <a class="nav-link" href="{{route('equipment-index')}}">{{trans('header.equipment')}}</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -47,7 +47,7 @@
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="/campuses">{{trans('header.campuses')}}</a>
                                 <a class="dropdown-item" href="/rooms">{{trans('header.rooms')}}</a>
-                                <a class="dropdown-item" href="/equipment-types">{{trans('header.equipment-types')}}</a>
+                                <a class="dropdown-item" href="{{route('equipmenttype-index')}}">{{trans('header.equipment-types')}}</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#">Something else here</a>
                             </div>

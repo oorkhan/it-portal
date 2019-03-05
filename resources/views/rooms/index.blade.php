@@ -19,7 +19,7 @@
                         <tbody>
                         @foreach($rooms as $room)
                         <tr>
-                            <td><a href="{{$room->path()}}">{{$room->name}}</a></td>
+                            <td><a href="{{$room->path('show')}}">{{$room->name}}</a></td>
                             <td>{{$room->type}}</td>
                         </tr>
                         @endforeach

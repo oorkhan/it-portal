@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Equipment;
-use App\EquipmentType;
+use App\Equipmenttype;
 use App\Room;
 use App\User;
 use Illuminate\Http\Request;
@@ -17,8 +17,8 @@ class EquipmentController extends Controller
      */
     public function index()
     {
-        $equipment = Equipment::where('is_deleted', false)->get();
-        return view('equipment.index', compact('equipment'));
+        $allEquipment = Equipment::all();
+        return view('equipment.index',compact('allEquipment'));
     }
 
     /**
@@ -28,10 +28,10 @@ class EquipmentController extends Controller
      */
     public function create()
     {
-        $types = EquipmentType::all();
         $rooms = Room::all();
+        $types = Equipmenttype::all();
         $users = User::all();
-        return view('equipment.create', compact('types', 'rooms', 'users'));
+        return view('equipment.create', compact('rooms', 'types', 'users'));
     }
 
     /**
@@ -44,8 +44,8 @@ class EquipmentController extends Controller
     {
         $attributes = $this->validateEquipment();
         $equipment = Equipment::create($attributes);
-        flash($equipment->model.'has been added.');
-        return redirect($equipment->path());
+        flash('equipment has been created');
+        return redirect($equipment->path('show'));
     }
 
     /**
@@ -56,7 +56,9 @@ class EquipmentController extends Controller
      */
     public function show(Equipment $equipment)
     {
-        return view('equipment.show', compact('equipment'));
+        $users = User::all();
+        $ownerChanges = $equipment->equipmentowners->all();
+        return view('equipment.show', compact('equipment', 'ownerChanges', 'users'));
     }
 
     /**
@@ -67,10 +69,10 @@ class EquipmentController extends Controller
      */
     public function edit(Equipment $equipment)
     {
-        $types = EquipmentType::all();
         $rooms = Room::all();
+        $types = Equipmenttype::all();
         $users = User::all();
-        return view('equipment.edit', compact('equipment', 'types', 'rooms', 'users'));
+        return view('equipment.edit', compact('equipment', 'rooms', 'types', 'users'));
     }
 
     /**
@@ -82,10 +84,10 @@ class EquipmentController extends Controller
      */
     public function update(Request $request, Equipment $equipment)
     {
-        $attributes = $this->validateEquipment();
+        $attributes = $this->validateEquipment('edit');
         $equipment->update($attributes);
-        flash($equipment->model.' has been updated.');
-        return redirect ($equipment->path());
+        flash('equipment has been updated');
+        return redirect($equipment->path('show'));
     }
 
     /**
@@ -96,23 +98,35 @@ class EquipmentController extends Controller
      */
     public function destroy(Equipment $equipment)
     {
-        $equipment->update([
-            'is_deleted' => true,
-            'deleted_date' => now()
-            ]);
-        flash($equipment->model.' has been deleted.');
-        return redirect ('/equipment');
+        $equipment->delete();
+        flash('equipment has been deleted');
+        return redirect(route('equipment-index'));
+
     }
 
-    public function validateEquipment(){
-        return request()->validate([
-            'model' => 'required|min:3',
-            'serial_no' => 'string',
-            'inventory_number' => 'string',
-            'purchase_date' => 'date',
-            'EquipmentType_id' => 'exists:equipment_types,id',
-            'user_id' => 'exists:users,id',
-            'room_id' => 'exists:rooms,id'
-        ]);
+    public function validateEquipment($method = null){
+        if($method == 'edit') {
+            return request()->validate([
+                'model' => 'string|required|min:3',
+                'manufacturer' => 'string|min:2|nullable',
+                'serial' => 'string|min:3|nullable',
+                'inventory_no' => 'string|min:3|nullable',
+                'purchase_date' => 'date|nullable',
+                'room_id' => 'nullable|exists:rooms,id',
+                'equipmenttype_id' => 'nullable|exists:equipmenttypes,id',
+                'user_id' => 'nullable|exists:users,id',
+            ]);
+        } else {
+            return request()->validate([
+                'model' => 'string|required|min:3',
+                'manufacturer' => 'string|min:2|nullable',
+                'serial' => 'string|min:3|nullable',
+                'inventory_no' => 'string|min:3|nullable|unique:equipment',
+                'purchase_date' => 'date|nullable',
+                'room_id' => 'nullable|exists:rooms,id',
+                'equipmenttype_id' => 'nullable|exists:equipmenttypes,id',
+                'user_id' => 'nullable|exists:users,id',
+            ]);
+        }
     }
 }

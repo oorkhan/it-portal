@@ -15,21 +15,21 @@ class CreateEquipmentTable extends Migration
     {
         Schema::create('equipment', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('EquipmentType_id');
-            $table->unsignedInteger('user_id');
-            $table->unsignedInteger('room_id');
+            $table->unsignedInteger('equipmenttype_id')->nullable();
+            $table->unsignedInteger('user_id')->nullable();
+            $table->unsignedInteger('room_id')->nullable();
 
             $table->string('model');
-            $table->string('serial_no')->nullable();
-            $table->string('inventory_number');
-
+            $table->string('manufacturer');
+            $table->string('serial');
+            $table->string('inventory_no');
             $table->date('purchase_date')->nullable();
-            $table->date('deleted_date')->nullable();
+            $table->date('deletion_date')->nullable();
             $table->timestamps();
 
-            $table->boolean('is_deleted')->default(false);
-
-            $table->foreign('EquipmentType_id')->references('id')->on('equipment_types');//->onDelete('cascade')
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('equipmenttype_id')->references('id')->on('equipmenttypes');
+            $table->foreign('room_id')->references('id')->on('rooms');
         });
     }
 

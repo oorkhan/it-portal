@@ -12,8 +12,22 @@ add file upload to equipment
 add action to equipment class
 покупка, передача, списание, починка
 
+при удалении проверять есть ли принадлежащие объекты если да то показывать сообщение
 
+ПЕРЕДЕЛАЙ WEB.PHP НЕ ИСПОЛЬЗУЙ resource routing
+
+добавить валидацию времени
+https://stackoverflow.com/questions/32541163/date-validation-in-laravel-5
+
+add details css class in equipment.show
+
+add target blank or modal to equipment index and show
+
+add description to equipment files
 
 *****
 Завершенные:
 добавить поддержку нескольких языков https://kode-blog.io/laravel-5-localization
+
+'EquipmentTypeController@show'
+

@@ -4,12 +4,12 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class EquipmentType extends Model
+class Equipmenttype extends Model
 {
     protected $guarded = [];
 
-    public function path(){
-        return '/equipment-types/'.$this->id;
+    public function path($method){
+        return route('equipmenttype-'.$method, ['id' => $this->id]);
     }
 
     public function equipment(){

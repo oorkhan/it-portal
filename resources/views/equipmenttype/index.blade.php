@@ -1,24 +1,24 @@
 @extends('layouts.app')
-@section('title', 'Equipment Types')
+@section('title', 'Equipment types')
 @section('content')
 
     <div class="container">
         <div class="row">
             <div class="col">
-                <h1>{{trans('equipment-types.all')}}</h1>
-                <div class="d-flex justify-content-end mb-2"><a class="btn btn-primary" href="/equipment-types/create">{{trans('form-elements.add-btn')}}</a></div>
+                <h1>{{trans('equipmenttype.all')}}</h1>
+                <div class="d-flex justify-content-end mb-2"><a class="btn btn-primary" href="{{route('equipmenttype-create')}}">{{trans('equipmenttype.add')}}</a></div>
                 <div>
-                    @if(count($equipmentTypes)>=1)
+                    @if(count($equipmenttypes)>=1)
                     <table class="table table-striped">
                         <thead>
                         <tr>
-                            <th scope="col">{{trans('equipment-types.name')}}</th>
+                            <th scope="col">{{trans('equipmenttype.name')}}</th>
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($equipmentTypes as $type)
+                        @foreach($equipmenttypes as $type)
                         <tr>
-                            <td><a href="{{$type->path()}}">{{$type->name}}</a></td>
+                            <td><a href="{{$type->path('show')}}">{{$type->name}}</a></td>
                         </tr>
                         @endforeach
                         </tbody>

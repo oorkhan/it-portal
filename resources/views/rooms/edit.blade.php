@@ -5,7 +5,7 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <form action="{{$room->path()}}" method="post">
+                <form action="{{$room->path('update')}}" method="post">
                     @csrf
                     @method('PATCH')
                     <div class="form-group">
@@ -36,7 +36,7 @@
                         <input name="numberOfPeople" class="form-control" min="0" value="{{$room->numberOfPeople}}" type="number" id="example-number-input">
                     </div>
                     <button type="submit" class="btn btn-warning">{{trans('form-elements.update-btn')}}</button>
-                    <a class="btn btn-secondary" href="/rooms">{{trans('form-elements.cancel-btn')}}</a>
+                    <a class="btn btn-secondary" href="{{$room->path('show')}}">{{trans('form-elements.cancel-btn')}}</a>
                 </form>
                 @if($errors->any())
                     @include('partials.errors')

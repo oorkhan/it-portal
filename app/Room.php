@@ -12,9 +12,10 @@ class Room extends Model
         return $this->belongsTo(Campus::class);
     }
 
-    public function path(){
-        return '/rooms/'.$this->id;
+    public function path($method){
+        return route('room-'.$method, ['id' => $this->id]);
     }
+
     public function equipment(){
         return $this->hasMany(Equipment::class);
     }

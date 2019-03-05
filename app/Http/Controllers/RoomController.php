@@ -43,7 +43,7 @@ class RoomController extends Controller
         $room = Room::create($attributes);
 
         flash('Room '.$room->name.' has been added.');
-        return redirect($room->path());
+        return redirect($room->path('show'));
     }
 
     /**
@@ -81,7 +81,7 @@ class RoomController extends Controller
         $attributes = $this->validateRoom();
         $room->update($attributes);
         flash('Room '.$room->name.' has been updated.');
-        return redirect($room->path());
+        return redirect($room->path('show'));
     }
 
     /**

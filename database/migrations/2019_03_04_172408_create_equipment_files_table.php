@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateEquipmentTypesTable extends Migration
+class CreateEquipmentFilesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,13 @@ class CreateEquipmentTypesTable extends Migration
      */
     public function up()
     {
-        Schema::create('equipment_types', function (Blueprint $table) {
+        Schema::create('equipment_files', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
+            $table->unsignedInteger('equipment_owners_id');
+            $table->string('url');
             $table->timestamps();
+
+            $table->foreign('equipment_owners_id')->references('id')->on('equipment_owners');
         });
     }
 
@@ -27,6 +30,6 @@ class CreateEquipmentTypesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('equipment_types');
+        Schema::dropIfExists('equipment_files');
     }
 }
