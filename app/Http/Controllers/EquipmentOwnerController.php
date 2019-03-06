@@ -50,7 +50,7 @@ class EquipmentOwnerController extends Controller
             $files = $request->file('files');
 
             foreach ($files as $file){
-                $url = $file->store('equipment');
+                $url = $file->store('public/storage/equipment');
                 $id = $ownerChangeInstanse->id;
                 EquipmentFile::create([
                     'equipment_owners_id' => $id,

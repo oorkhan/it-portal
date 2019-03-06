@@ -2,43 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3c1edf2a-bb9e-4394-ad59-5fb1a03328ee" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/it-portal.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/it-portal.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NOTES/NOTES.TXT" beforeDir="false" afterPath="$PROJECT_DIR$/NOTES/NOTES.TXT" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NOTES/TO DO LIST.txt" beforeDir="false" afterPath="$PROJECT_DIR$/NOTES/TO DO LIST.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NOTES/equipment file.txt" beforeDir="false" afterPath="$PROJECT_DIR$/NOTES/equipment file.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Equipment.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/EquipmentType.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/EquipmentController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/EquipmentTypeController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RoomController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RoomController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Room.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Room.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/EquipmentTypeFactory.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_02_18_165411_create_equipment_types_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_02_18_185050_create_equipment_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/az/equipment-types.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/az/equipment.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/az/equipment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/en/equipment-types.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/en/equipment.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/equipment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/ru/equipment-types.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/ru/equipment.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/ru/equipment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/equipment/create.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/equipment/edit.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/equipment/index.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/equipment/show.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/equyipmentTypes/create.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/equyipmentTypes/edit.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/equyipmentTypes/index.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/equyipmentTypes/show.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/rooms/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rooms/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/rooms/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rooms/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/rooms/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rooms/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/app/public/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/EquipmentOwnerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/EquipmentOwnerController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/equipment/change_user_show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/equipment/change_user_show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/app/.gitignore" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -54,17 +21,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/EquipmentController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-334">
+            <state relative-caret-position="1232">
               <caret line="60" column="85" selection-start-line="60" selection-start-column="85" selection-end-line="60" selection-end-column="85" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/EquipmentOwnerController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="941">
-              <caret line="56" column="33" lean-forward="true" selection-start-line="56" selection-start-column="33" selection-end-line="56" selection-end-column="33" />
+            <state relative-caret-position="545">
+              <caret line="115" column="50" selection-start-line="115" selection-start-column="50" selection-end-line="115" selection-end-column="50" />
               <folding>
                 <element signature="e#40#58#0#PHP" expanded="true" />
               </folding>
@@ -73,25 +40,9 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/view.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="25" column="65" selection-start-line="25" selection-start-column="65" selection-end-line="25" selection-end-column="65" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/config/filesystems.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-775" />
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/equipment/show.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="484">
+            <state relative-caret-position="452">
               <caret line="67" column="124" selection-start-line="67" selection-start-column="41" selection-end-line="67" selection-end-column="124" />
             </state>
           </provider>
@@ -100,8 +51,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/equipment/change_user_show.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="16" column="72" selection-start-line="16" selection-start-column="69" selection-end-line="16" selection-end-column="72" />
+            <state relative-caret-position="462">
+              <caret line="21" column="37" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/equipment/change_user.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="355">
+              <caret line="23" column="22" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -118,7 +78,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-5">
+            <state relative-caret-position="726">
               <caret line="42" column="18" selection-start-line="42" selection-start-column="18" selection-end-line="42" selection-end-column="18" />
             </state>
           </provider>
@@ -197,7 +157,6 @@
         <option value="$PROJECT_DIR$/database/migrations/2019_03_03_122750_create_equipment_owners_table.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/RoomController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/EquipmentController.php" />
-        <option value="$PROJECT_DIR$/resources/views/equipment/change_user.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_03_04_172408_create_equipment_files_table.php" />
         <option value="$PROJECT_DIR$/app/Equipment.php" />
         <option value="$PROJECT_DIR$/app/EquipmentFile.php" />
@@ -205,6 +164,7 @@
         <option value="$PROJECT_DIR$/app/EquipmentOwner.php" />
         <option value="$PROJECT_DIR$/NOTES/TO DO LIST.txt" />
         <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/resources/views/equipment/change_user.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/equipment/change_user_show.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/EquipmentOwnerController.php" />
       </list>
@@ -337,65 +297,25 @@
             <path>
               <item name="it-portal" type="b2602c69:ProjectViewProjectNode" />
               <item name="it-portal" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="it-portal" type="b2602c69:ProjectViewProjectNode" />
-              <item name="it-portal" type="462c0819:PsiDirectoryNode" />
               <item name="database" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="it-portal" type="b2602c69:ProjectViewProjectNode" />
               <item name="it-portal" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-              <item name="factories" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="it-portal" type="b2602c69:ProjectViewProjectNode" />
-              <item name="it-portal" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-              <item name="migrations" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="it-portal" type="b2602c69:ProjectViewProjectNode" />
-              <item name="it-portal" type="462c0819:PsiDirectoryNode" />
-              <item name="NOTES" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="it-portal" type="b2602c69:ProjectViewProjectNode" />
-              <item name="it-portal" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="it-portal" type="b2602c69:ProjectViewProjectNode" />
-              <item name="it-portal" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="it-portal" type="b2602c69:ProjectViewProjectNode" />
-              <item name="it-portal" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="lang" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="it-portal" type="b2602c69:ProjectViewProjectNode" />
-              <item name="it-portal" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="lang" type="462c0819:PsiDirectoryNode" />
-              <item name="en" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="it-portal" type="b2602c69:ProjectViewProjectNode" />
-              <item name="it-portal" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="lang" type="462c0819:PsiDirectoryNode" />
-              <item name="ru" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="it-portal" type="b2602c69:ProjectViewProjectNode" />
               <item name="it-portal" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="it-portal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="it-portal" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="equipment" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="it-portal" type="b2602c69:ProjectViewProjectNode" />
@@ -407,6 +327,21 @@
               <item name="it-portal" type="462c0819:PsiDirectoryNode" />
               <item name="storage" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="it-portal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="it-portal" type="462c0819:PsiDirectoryNode" />
+              <item name="storage" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="it-portal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="it-portal" type="462c0819:PsiDirectoryNode" />
+              <item name="storage" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="storage" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -498,11 +433,12 @@
       <workItem from="1551610746867" duration="14577000" />
       <workItem from="1551717539576" duration="5595000" />
       <workItem from="1551804261815" duration="9044000" />
+      <workItem from="1551885927926" duration="3902000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="173078000" />
+    <option name="totallyTimeSpent" value="176980000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -516,7 +452,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23081024" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23347548" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -531,7 +467,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.41061756" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.41061756" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -740,13 +676,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/equipment/change_user.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" column="129" selection-start-line="7" selection-start-column="129" selection-end-line="7" selection-end-column="129" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/EquipmentFile.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
@@ -761,20 +690,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/NOTES/TO DO LIST.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="25" column="34" selection-start-line="25" selection-start-column="34" selection-end-line="25" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/EquipmentOwner.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="15" column="69" selection-start-line="15" selection-start-column="69" selection-end-line="15" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/equipment/edit.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="800">
@@ -782,47 +697,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/storage/storage/equipment/WMsrYnermKyO0Rflvev27YDQUEVCtiSac7ys551y.jpeg" />
+    <entry file="file://$PROJECT_DIR$/storage/app/equipment/6HB0d7ymoKROkP6QeayGGTBXlK4vzBJCZOyG4NCj.jpeg" />
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/EquipmentController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-334">
+        <state relative-caret-position="1232">
           <caret line="60" column="85" selection-start-line="60" selection-start-column="85" selection-end-line="60" selection-end-column="85" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/equipment/show.blade.php">
+    <entry file="file://$PROJECT_DIR$/NOTES/TO DO LIST.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="67" column="124" selection-start-line="67" selection-start-column="41" selection-end-line="67" selection-end-column="124" />
+        <state relative-caret-position="550">
+          <caret line="25" column="34" selection-start-line="25" selection-start-column="34" selection-end-line="25" selection-end-column="34" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5">
+        <state relative-caret-position="726">
           <caret line="42" column="18" selection-start-line="42" selection-start-column="18" selection-end-line="42" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/storage/storage/equipment/WMsrYnermKyO0Rflvev27YDQUEVCtiSac7ys551y.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storage/app/equipment/6HB0d7ymoKROkP6QeayGGTBXlK4vzBJCZOyG4NCj.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/equipment/change_user_show.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/EquipmentOwner.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="16" column="72" selection-start-line="16" selection-start-column="69" selection-end-line="16" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/EquipmentOwnerController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="941">
-          <caret line="56" column="33" lean-forward="true" selection-start-line="56" selection-start-column="33" selection-end-line="56" selection-end-column="33" />
-          <folding>
-            <element signature="e#40#58#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="330">
+          <caret line="15" column="69" selection-start-line="15" selection-start-column="69" selection-end-line="15" selection-end-column="69" />
         </state>
       </provider>
     </entry>
@@ -835,7 +736,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/filesystems.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-775" />
+        <state relative-caret-position="-626" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/equipment/show.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="452">
+          <caret line="67" column="124" selection-start-line="67" selection-start-column="41" selection-end-line="67" selection-end-column="124" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/equipment/change_user.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="355">
+          <caret line="23" column="22" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/equipment/change_user_show.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="21" column="37" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/EquipmentOwnerController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="545">
+          <caret line="115" column="50" selection-start-line="115" selection-start-column="50" selection-end-line="115" selection-end-column="50" />
+          <folding>
+            <element signature="e#40#58#0#PHP" expanded="true" />
+          </folding>
+        </state>
       </provider>
     </entry>
   </component>

@@ -14,12 +14,12 @@
             <div>
                 <ul>
                     @foreach($equipmentOwner->files as $file)
-                        <li><a target="_blank" href="<?=asset($file->url)?>">file</a></li>
+                        <li><a target="_blank" href="{{Storage::url($file->url)}}">file</a></li>
                     @endforeach
                 </ul>
             </div>
             <a class="btn btn-secondary" href="{{$equipment->path('show')}}">{{trans('form-elements.back-btn')}}</a>
-            <button class="btn-danger btn-sm btn" onclick="if(confirm('Are you sure?')){$('#deleteForm').submit()}">
+            <button class="btn-danger btn" onclick="if(confirm('Are you sure?')){$('#deleteForm').submit()}">
                 {{trans('form-elements.delete-btn')}}
                 <form method="post" action="{{route('equipment-owner-delete', ['eid' => $equipment->id, 'cid' => $equipmentOwner->id ])}}" id="deleteForm">
                     @csrf
