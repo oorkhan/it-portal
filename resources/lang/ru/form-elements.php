@@ -13,6 +13,7 @@ return [
     'delete-btn' => 'Удалить',
     'edit-btn' => 'Редактировать',
     'select-default' => 'Выбрать...',
-    'back-to-list' => 'К списку'
+    'back-to-list' => 'К списку',
+    'back_btn' => 'Назад',
 ]
 ?>

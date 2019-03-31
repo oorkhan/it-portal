@@ -14,8 +14,9 @@
                         <tr>
                             <th scope="col">{{trans('equipment.model')}}</th>
                             <th scope="col">{{trans('equipment.user')}}</th>
-                            <th scope="col">{{trans('equipment.room')}}</th>
+                            <th scope="col">{{trans('equipment.location')}}</th>
                             <th scope="col">{{trans('equipment.inventory_no')}}</th>
+                            <th scope="col">{{trans('equipment.status')}}</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -25,6 +26,11 @@
                             <td><a href="{{$equipment->user->path('show')}}">{{$equipment->user->name}}</a></td>
                             <td><a href="{{$equipment->room->path('show')}}">{{$equipment->room->name}}</a></td>
                             <td>{{$equipment->inventory_no}}</td>
+                            <td>
+                                <span class="{{$equipment->is_deleted ? 'text-danger' : 'text-success'}}">
+                                {{$equipment->is_deleted ? trans('equipment.is_deleted') : trans('equipment.active')}}
+                                </span>
+                            </td>
                         </tr>
                         @endforeach
                         </tbody>

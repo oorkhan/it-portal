@@ -20,9 +20,32 @@ Route::group([
     Route::get('/', 'HomeController@index')->name('home');
     Route::resource('projects', 'ProjectsController');
 
+    //deletion file get routes
+    Route::get('/equipment-deletions/{deletion}/files', 'DeletionFileController@create')->name('deletion-file-create');
+    Route::get('/equipment-deletions/{deletion}/files/{file}', 'DeletionFileController@edit')->name('deletion-file-edit');
+
+    //EquipmentDeletion get routes
+    Route::get('/equipment/{equipment}/deletions', 'EquipmentDeletionController@create')->name('equipment-deletion-create');
+    Route::get('/equipment/{equipment}/deletions/{deletion}', 'EquipmentDeletionController@show')->name('equipment-deletion-show');
+    Route::get('/equipment/{equipment}/deletions/{deletion}/edit', 'EquipmentDeletionController@edit')->name('equipment-deletion-edit');
+
+
+    //equipment repair files get routes
+    Route::get('/repairs/{repair}/files', 'RepairFileController@create')->name('equipment-repair-file-create');
+
+    //equipment repair get routes
+
+    Route::get('/equipment/{equipment}/repairs', 'EquipmentRepairController@create')->name('equipment-repair-create');
+    Route::get('/equipment/{equipment}/repairs/{repair}', 'EquipmentRepairController@show')->name('equipment-repair-show');
+    Route::get('/equipment/{equipment}/repairs/{repair}/edit', 'EquipmentRepairController@edit')->name('equipment-repair-edit');
+
     //equipment owner get routes
     Route::get('/equipment/{equipment}/owners/create', 'EquipmentOwnerController@create')->name('equipment-owner-change');
     Route::get('/equipment/{equipment}/owners/{owner}', 'EquipmentOwnerController@show')->name('equipment-owner-show');
+    Route::get('/equipment/{equipment}/owners/{owner}/add-file', 'EquipmentOwnerController@addFileCreate')
+        ->name('equipment-owner-add-file');
+
+    Route::get('/equipment/{equipment}/owners/{owner}/edit', 'EquipmentOwnerController@edit')->name('equipment-owner-edit');
 
 
     //campuses post routes
@@ -55,9 +78,35 @@ Route::group([
     Route::patch('/tasks/{task}', 'ProjectTasksController@update');
     Auth::routes();
 });
+/** OTHER PAGES THAT SHOULD NOT BE LOCALIZED **/
+
+//deletion file post routes
+Route::post('/equipment-deletions/{deletion}/files', 'DeletionFileController@store')->name('deletion-file-store');
+Route::patch('/equipment-deletions/{deletion}/files/{file}', 'DeletionFileController@update')->name('deletion-file-update');
+Route::delete('/equipment-deletions/files/{file}', 'DeletionFileController@destroy')->name('deletion-file-destroy');
+
+//EquipmentDeletion post routes
+Route::post('/equipment/{equipment}/deletions', 'EquipmentDeletionController@store')->name('equipment-deletion-store');
+Route::patch('/equipment/{equipment}/deletions/{deletion}', 'EquipmentDeletionController@update')->name('equipment-deletion-update');
+Route::delete('/equipment/{equipment}/deletions/{deletion}', 'EquipmentDeletionController@destroy')->name('equipment-deletion-delete');
+
+
+
+//equipment repair file post routes
+Route::post('/repairs/{repair}/files', 'RepairFileController@store')->name('repair-file-store');
+Route::delete('/repairs/{repair}/files/{file}', 'RepairFileController@destroy')->name('repair-file-delete');
+
+
+//equipment repair post routes
+Route::post('/equipment/{equipment}/repair', 'EquipmentRepairController@store')->name('equipment-repair-store');
+Route::delete('/equipment/{equipment}/repairs/{repair}', 'EquipmentRepairController@destroy')->name('equipment-repair-delete');
+Route::patch('/equipment/{equipment}/repairs/{repair}', 'EquipmentRepairController@update')->name('equipment-repair-update');
 
 //equipment owner post routes
 Route::post('/equipment/{equipment}/owner/', 'EquipmentOwnerController@store')->name('equipment-owner-store');
+Route::patch('/equipment/{equipment}/owners/{owner}', 'EquipmentOwnerController@update')->name('equipment-owner-update');
+Route::post('/equipment/{equipment}/owners/{owner}/add-file', 'EquipmentOwnerController@addFileStore')->name('owner-file-store');
+Route::delete('/files/{file}', 'EquipmentOwnerController@deleteFile')->name('owner-file-delete');
 Route::delete('/equipment/{equipment}/owners/{owner}', 'EquipmentOwnerController@destroy')->name('equipment-owner-delete');
 
 //equipment post routes
@@ -82,7 +131,6 @@ Route::patch('/campuses/{campus}', 'CampusController@update');
 Route::delete('/campuses/{campus}', 'CampusController@destroy');
 
 
-Route::post('/equipment/{equipment}/transactions', 'EquipmentTransactionController@store');
-/** OTHER PAGES THAT SHOULD NOT BE LOCALIZED **/
+
 
 

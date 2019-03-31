@@ -11,6 +11,9 @@ use Illuminate\Support\Facades\Storage;
 
 class EquipmentOwnerController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');//can apply to certain methods
+    }
     /**
      * Display a listing of the resource.
      *
@@ -29,7 +32,7 @@ class EquipmentOwnerController extends Controller
     public function create(Equipment $equipment)
     {
         $users = User::all();
-        return view('equipment.change_user', compact('equipment', 'users'));
+        return view('equipment.owner.change_user', compact('equipment', 'users'));
     }
 
     /**
@@ -77,7 +80,7 @@ class EquipmentOwnerController extends Controller
 
 //        $prevOwner = $users->where('id', $change->prev_user_id)->first();
 //        $nextOwner = $users->where('id', $change->next_user_id)->first();
-        return view('equipment.change_user_show',
+        return view('equipment.owner.change_user_show',
             compact('equipmentOwner', 'equipment', 'prevOwner', 'nextOwner'));
     }
 
@@ -87,9 +90,10 @@ class EquipmentOwnerController extends Controller
      * @param  \App\EquipmentOwner  $equipmentOwner
      * @return \Illuminate\Http\Response
      */
-    public function edit(EquipmentOwner $equipmentOwner)
+    public function edit(Equipment $equipment, EquipmentOwner $owner)
     {
-        //
+        $users = User::all();
+        return view('equipment.owner.owner-change-edit', compact('equipment', 'owner', 'users'));
     }
 
     /**
@@ -99,9 +103,16 @@ class EquipmentOwnerController extends Controller
      * @param  \App\EquipmentOwner  $equipmentOwner
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, EquipmentOwner $equipmentOwner)
+    public function update(Request $request, Equipment $equipment, EquipmentOwner $owner)
     {
-        //
+        $attributes = request()->validate([
+            'prev_user_id' => 'int|exists:users,id',
+            'next_user_id' => 'int|exists:users,id',
+        ]);
+
+        $owner->update($attributes);
+        flash('owner change has been edited');
+        return redirect(route('equipment-owner-show', ['eid' => $equipment->id, 'ocid' => $owner->id]));
     }
 
     /**
@@ -120,5 +131,33 @@ class EquipmentOwnerController extends Controller
         $equipmentOwner->delete();
         flash('Operation has been deleted');
         return redirect($equipment->path('show'));
+    }
+
+    public function addFileCreate(Equipment $equipment, EquipmentOwner $owner){
+        return view('equipment.owner.owner-file-create', compact('equipment', 'owner'));
+    }
+
+    public function addFileStore(Request $request, Equipment $equipment, EquipmentOwner $owner){
+        if($request->hasFile('file')){
+            $attributes = request()->validate([
+                'description' => 'required|string|min:3|max:200',
+            ]);
+            $file = $request->file('file');
+            $url = $file->store('public/storage/equipment');
+            $attributes['url'] = $url;
+            $attributes['equipment_owners_id'] = $owner->id;
+            EquipmentFile::create($attributes);
+            flash('file has been added');
+            return redirect(route('equipment-owner-show', ['eid' => $equipment->id, 'ocid' => $owner->id]));
+        }else {
+            return back()->withInput()->withErrors('Please upload file');
+        }
+    }
+
+    public function deleteFile(EquipmentFile $file){
+        Storage::delete($file->url);
+        $file->delete();
+        flash('File has been deleted');
+        return back();
     }
 }

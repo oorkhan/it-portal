@@ -13,6 +13,7 @@ return [
     'delete-btn' => 'Delete',
     'edit-btn' => 'Edit',
     'select-default' => 'Choose...',
-    'back-to-list' => 'Back to list'
+    'back-to-list' => 'Back to list',
+    'back_btn' => 'Back',
 ]
 ?>
