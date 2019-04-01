@@ -2,6 +2,13 @@ Laravel 5.4: Specified key was too long error
 AppServiceProvider.php
 use Illuminate\Support\Facades\Schema;
 
+
+видео по авторизации https://www.youtube.com/watch?v=MbS4erVd820        14:34
+
+Отменить работу если неполучилось
+git clean -df
+git checkout -- .
+
 public function boot()
 {
     Schema::defaultStringLength(191);

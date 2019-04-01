@@ -48,4 +48,18 @@ class User extends Authenticatable
     public function path(){
         return '/users/'.$this->id;
     }
+
+    public function roles(){
+        return $this->belongsToMany(Role::class, 'role_users');
+    }
+
+    public function hasAccess(array $permissions)
+    {
+        foreach($this->roles as $role){
+            if($role->hasAccess($permissions)){
+                return true;
+            }
+            return false;
+        }
+    }
 }
