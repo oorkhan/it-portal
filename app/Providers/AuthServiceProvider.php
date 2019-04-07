@@ -24,22 +24,6 @@ class AuthServiceProvider extends ServiceProvider
     public function boot(Gate $gate)
     {
         $this->registerPolicies();
-        $this->registerCrudPolicies();
 
-    }
-
-    public function registerCrudPolicies(){
-        \Gate::define('create', function($user){
-            return $user->hasAccess(['create']);
-        });
-        \Gate::define('update', function($user){
-            return $user->hasAccess(['update']);
-        });
-        \Gate::define('delete', function($user){
-            return $user->hasAccess(['delete']);
-        });
-        \Gate::define('view', function($user){
-            return $user->hasAccess(['view']);
-        });
     }
 }

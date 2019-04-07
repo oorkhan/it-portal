@@ -49,10 +49,10 @@ Route::group([
 
 
     //campuses get routes
-    Route::get('/campuses', 'CampusController@index')->middleware('can:view');
-    Route::get('/campuses/create', 'CampusController@create');
+    Route::get('/campuses', 'CampusController@index');
+    Route::get('/campuses/create', 'CampusController@create')->middleware('permission:create');
     Route::get('/campuses/{campus}', 'CampusController@show');
-    Route::get('/campuses/{campus}/edit', 'CampusController@edit')->middleware('can:update');
+    Route::get('/campuses/{campus}/edit', 'CampusController@edit');
 
     //equipment get routes
     Route::get('/equipment', 'EquipmentController@index')->name('equipment-index');
@@ -126,7 +126,7 @@ Route::delete('/rooms/{room}', 'RoomController@destroy')->name('room-destroy');
 
 
 //campuses post routes
-Route::post('/campuses', 'CampusController@store')->name('campus-create');
+Route::post('/campuses', 'CampusController@store')->name('campus-create')->middleware('permission:create');
 Route::patch('/campuses/{campus}', 'CampusController@update');
 Route::delete('/campuses/{campus}', 'CampusController@destroy');
 
