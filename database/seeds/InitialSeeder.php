@@ -17,7 +17,7 @@ class InitialSeeder extends Seeder
         DB::table('users')->insert([
             'name' => 'Super Admin',
             'email' => 'o.orkhan@gmail.com',
-            'password' => 'D@igoro88',
+            'password' => Hash::make('D@igoro88'),
         ]);
 
         DB::table('roles')->insert([
@@ -45,6 +45,23 @@ class InitialSeeder extends Seeder
             'role_id' => 1,
             'model_type' => 'App\User',
             'model_id' => 1,
+        ]);
+
+        DB::table('role_has_permissions')->insert([
+            'permission_id' => 1,
+            'role_id' => 1,
+        ]);
+        DB::table('role_has_permissions')->insert([
+            'permission_id' => 2,
+            'role_id' => 1,
+        ]);
+        DB::table('role_has_permissions')->insert([
+            'permission_id' => 3,
+            'role_id' => 1,
+        ]);
+        DB::table('role_has_permissions')->insert([
+            'permission_id' => 4,
+            'role_id' => 1,
         ]);
     }
 }
