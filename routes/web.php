@@ -127,8 +127,8 @@ Route::delete('/rooms/{room}', 'RoomController@destroy')->name('room-destroy');
 
 //campuses post routes
 Route::post('/campuses', 'CampusController@store')->name('campus-create')->middleware('permission:create');
-Route::patch('/campuses/{campus}', 'CampusController@update');
-Route::delete('/campuses/{campus}', 'CampusController@destroy');
+Route::patch('/campuses/{campus}', 'CampusController@update')->middleware('permission:update');
+Route::delete('/campuses/{campus}', 'CampusController@destroy')->middleware('permission:delete');
 
 
 
