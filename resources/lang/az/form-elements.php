@@ -12,6 +12,8 @@ return [
     'update-btn' => 'Update',
     'delete-btn' => 'Delete',
     'edit-btn' => 'Edit',
-    'select-default' => 'Choose...'
+    'select-default' => 'Choose...',
+    'back_btn' => 'Geriya',
+
 ]
 ?>

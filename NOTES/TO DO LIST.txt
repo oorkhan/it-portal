@@ -25,6 +25,17 @@ add target blank or modal to equipment index and show
 
 add description to equipment files
 
+in equipment create choose campus the room ajax select
+
+
+add repair files
+
+refactor, work on localization files
+
+
+
+
+
 *****
 Завершенные:
 добавить поддержку нескольких языков https://kode-blog.io/laravel-5-localization

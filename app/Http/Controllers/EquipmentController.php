@@ -10,6 +10,9 @@ use Illuminate\Http\Request;
 
 class EquipmentController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');//can apply to certain methods
+    }
     /**
      * Display a listing of the resource.
      *
@@ -57,8 +60,7 @@ class EquipmentController extends Controller
     public function show(Equipment $equipment)
     {
         $users = User::all();
-        $ownerChanges = $equipment->equipmentowners->all();
-        return view('equipment.show', compact('equipment', 'ownerChanges', 'users'));
+        return view('equipment.show', compact('equipment', 'users'));
     }
 
     /**
@@ -103,6 +105,7 @@ class EquipmentController extends Controller
         return redirect(route('equipment-index'));
 
     }
+
 
     public function validateEquipment($method = null){
         if($method == 'edit') {

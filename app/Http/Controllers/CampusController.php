@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 
 class CampusController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');//can apply to certain methods
+    }
     /**
      * Display a listing of the resource.
      *

@@ -28,6 +28,13 @@ class Equipment extends Model
         return $this->hasMany(EquipmentOwner::class);
     }
 
+    public function equipmentrepairs(){
+        return $this->hasMany(EquipmentRepair::class);
+    }
+
+    public function deletion(){
+        return $this->hasOne(EquipmentDeletion::class);
+    }
     public function changeOwner($change){
 
         $this->user_id = $change['next_user_id'];

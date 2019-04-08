@@ -7,7 +7,11 @@
             <div class="col">
                 <h1>{{trans('campuses.all')}}</h1>
                 <div class="d-flex justify-content-end mb-2">
-                    <a class="btn btn-primary" href="/campuses/create">{{trans('form-elements.add-btn')}}</a>
+                    @can('create')
+                        <a class="btn btn-primary" href="/campuses/create">{{trans('form-elements.add-btn')}}</a>
+                    @else
+                        <a class="btn btn-secondary disabled" role="button" aria-disabled="true" href="/campuses/create">{{trans('form-elements.add-btn')}}</a>
+                    @endcan
                 </div>
                 <div>
                     @if(count($campuses)>=1)
