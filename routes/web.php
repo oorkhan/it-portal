@@ -20,6 +20,13 @@ Route::group([
     Route::get('/', 'HomeController@index')->name('home');
     Route::resource('projects', 'ProjectsController');
 
+    //departments get routes
+    Route::get('/departments/create', 'DepartmentController@create')->name('department-create')->middleware('permission:create');
+    Route::get('/departments/{department}/edit', 'DepartmentController@edit')->name('department-edit')->middleware('permission:update');
+    Route::get('/departments/{department}', 'DepartmentController@show')->name('department-show')->middleware('permission:view');
+    Route::get('/departments', 'DepartmentController@index')->name('department-index')->middleware('permission:view');
+
+
     //deletion file get routes
     Route::get('/equipment-deletions/{deletion}/files', 'DeletionFileController@create')->name('deletion-file-create')->middleware('permission:create');
     Route::get('/equipment-deletions/{deletion}/files/{file}', 'DeletionFileController@edit')->name('deletion-file-edit')->middleware('permission:update');
@@ -79,6 +86,12 @@ Route::group([
     Auth::routes();
 });
 /** OTHER PAGES THAT SHOULD NOT BE LOCALIZED **/
+
+//departments post routes
+Route::patch('/departments/{department}', 'DepartmentController@update')->name('department-update')->middleware('permission:update');
+Route::delete('/departments/{department}', 'DepartmentController@destroy')->name('department-delete')->middleware('permission:delete');
+Route::post('/departments', 'DepartmentController@store')->name('department-store')->middleware('permission:create');
+
 
 //deletion file post routes
 Route::post('/equipment-deletions/{deletion}/files', 'DeletionFileController@store')->name('deletion-file-store')->middleware('permission:create');

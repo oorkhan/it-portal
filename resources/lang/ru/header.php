@@ -12,6 +12,7 @@ return [
     'setup' => 'Настройка',
     'campuses' => 'Кампусы',
     'rooms' => 'Комнаты',
-    'equipment-types' => 'Типы оборудования'
+    'equipment-types' => 'Типы оборудования',
+    'departments' => 'Отделы',
 ]
 ?>

@@ -12,6 +12,7 @@ return [
     'setup' => 'Setup',
     'campuses' => 'Campuses',
     'rooms' => 'Rooms',
-    'equipment-types' => 'Equipment types'
+    'equipment-types' => 'Equipment types',
+    'departments' => 'Departments',
 ]
 ?>
