@@ -47,8 +47,8 @@ class User extends Authenticatable
         return $this->hasMany(Equipment::class);
     }
 
-    public function path(){
-        return '/users/'.$this->id;
+    public function path($method){
+        return route("users-$method", ["id" => $this->id]);
     }
 
 }

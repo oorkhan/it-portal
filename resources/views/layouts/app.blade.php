@@ -46,6 +46,7 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{route('department-index')}}">{{trans('header.departments')}}</a>
+                                <a class="dropdown-item" href="{{route('users-index')}}">{{trans('users.users')}}</a>
                                 <a class="dropdown-item" href="/campuses">{{trans('header.campuses')}}</a>
                                 <a class="dropdown-item" href="/rooms">{{trans('header.rooms')}}</a>
                                 <a class="dropdown-item" href="{{route('equipmenttype-index')}}">{{trans('header.equipment-types')}}</a>

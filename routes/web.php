@@ -20,6 +20,13 @@ Route::group([
     Route::get('/', 'HomeController@index')->name('home');
     Route::resource('projects', 'ProjectsController');
 
+    //user get routes
+    Route::get('/users/create', 'UserController@create')->name('users-create')->middleware('permission:create');
+    Route::get('/users/{user}/reset', 'UserController@reset')->name('users-reset')->middleware('permission:update');
+    Route::get('/users/{user}/edit', 'UserController@edit')->name('users-edit')->middleware('permission:update');
+    Route::get('/users/{user}', 'UserController@show')->name('users-show')->middleware('permission:view');
+    Route::get('/users', 'UserController@index')->name('users-index')->middleware('permission:view');
+
     //departments get routes
     Route::get('/departments/create', 'DepartmentController@create')->name('department-create')->middleware('permission:create');
     Route::get('/departments/{department}/edit', 'DepartmentController@edit')->name('department-edit')->middleware('permission:update');
@@ -86,6 +93,13 @@ Route::group([
     Auth::routes();
 });
 /** OTHER PAGES THAT SHOULD NOT BE LOCALIZED **/
+
+//user post routes
+Route::patch('/users/{user}/reset', 'UserController@resetstore')->name('users-resetstore')->middleware('permission:update');
+Route::patch('/users/{user}', 'UserController@update')->name('users-update')->middleware('permission:update');
+Route::delete('/users/{user}', 'UserController@destroy')->name('users-delete')->middleware('permission:delete');
+Route::post('/users', 'UserController@store')->name('users-store')->middleware('permission:create');
+
 
 //departments post routes
 Route::patch('/departments/{department}', 'DepartmentController@update')->name('department-update')->middleware('permission:update');
