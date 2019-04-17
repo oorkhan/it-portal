@@ -9,7 +9,7 @@
                 @csrf
                 @method('patch')
                 <div class="form-group">
-                    <label for="name">{{trans('user.name')}}</label>
+                    <label for="name">{{trans('users.name')}}</label>
                     <input class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" type="text" name="name" id="name" value="{{old('name')??$user->name}}">
                     @if ($errors->has('name'))
                         <span class="invalid-feedback" role="alert">

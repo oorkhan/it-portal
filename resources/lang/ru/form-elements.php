@@ -15,5 +15,6 @@ return [
     'select-default' => 'Выбрать...',
     'back-to-list' => 'К списку',
     'back_btn' => 'Назад',
+    'reset_pass' => 'Сбросить пароль',
 ]
 ?>
